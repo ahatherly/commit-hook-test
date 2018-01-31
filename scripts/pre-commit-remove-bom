@@ -5,14 +5,11 @@
 # If you've just cloned this repository, you can use the installHook.sh to install
 # this as a pre-commit hook locally.
 
-echo Running $BASH_SOURCE
-set | egrep GIT
-echo PWD is $PWD
-
+#echo Running $BASH_SOURCE
+#set | egrep GIT
+#echo PWD is $PWD
 echo "== Looking for Byte Order Markers to remove =="
-
 found=0
-
 for x in $(find . -name '*.xml'); do
  if [[ "$(file "$x")" == *UTF-8\ Unicode\ \(with\ BOM\)* ]]; then
    echo "Removing UTF-8 BOM for $x"
